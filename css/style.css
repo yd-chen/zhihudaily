@@ -1,0 +1,362 @@
+html,body,a{
+	margin: 0px;
+	text-decoration: none;
+	list-style: none;
+}
+body{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.bg{
+	height: auto;
+	background-color: #f9f9f9;
+}
+
+/*为to-top键设置属性*/
+.to-top{
+	position: fixed;
+	right: 100px;
+	bottom: 50px;
+	width:60px;
+	height: 60px;
+	opacity: 1;
+	background-image: url('../images/back_to_top_icon.png');
+	cursor: pointer;
+	transition: all 0.5s;
+}
+.to-top.hidden {
+	bottom: 10px;
+	opacity: 0;
+}
+
+/*导航条 nav部分*/
+.nav{
+	width: 100%;
+	height: 78px;
+	position: fixed;
+	z-index: 2;
+	top: -1px;
+	background-color: #ffffff;
+}
+.container{
+	width: 960px;
+	margin: 0px auto;
+}
+.nav .container{
+	height: 100%;
+}
+.nav .container>a{
+	float: left;
+	display: block;
+	width: 220px;
+	height: 100%;
+	background-image: url(../images/top_logo.png);
+	background-repeat: no-repeat;
+	background-position: 0px 14px;
+}
+.nav-link {
+	float: right;
+	width: 280px;
+	height: 100%;
+}
+.nav-link a{
+	float: left;
+	display: block;
+	width: 140px;
+	height: 100%;
+	font-size: 16px;
+	color: #000000;	
+	/*text-align: center;*/
+	/*line-height: 78px;*/
+	
+}
+.nav-link a span{
+	display: block;
+	width: 120px;
+	height: 16px;
+	border-radius: 3px;
+	padding:8px 0px;
+	margin: 23px 10px 0px 10px;
+	line-height: 16px;
+	text-align: center;
+}
+.nav-link>a>span.active{
+	background-color: #f0f9ff;
+	color: #008bed;
+}
+
+/*download 版本下载 部分*/
+.download{
+	height: 460px;
+	background-color: #008bed;
+	margin-top: 78px;
+}
+.container .left{
+	width: 415px;
+	height: 460px;
+	margin-left: 12px;
+	float: left;
+/*
+‘浮动’脱离了普通流，若需要改变.left的位置，可以用margin-top，或者用transform.这里用了transform*//*margin-top: 12px。
+top/bottom/left/right需要搭配‘定位’使用，否则会失效的。
+*/
+	overflow: hidden;
+}
+.container .left>img{
+	transform: translate(20px, 12px);
+}
+.container .left>img{
+	animation: ver-anime 0.8s;
+}
+@keyframes ver-anime{
+	from{
+		transform: translate(20px, 120px);
+	}
+	to{
+		transform: translate(20px, 12px);
+	}
+}
+.container .right{
+	float: right;
+	width: 392px;
+	height: 303px;
+	transform: translate(-24px, 100px);
+	animation: hor-anime 0.8s;
+}
+@keyframes hor-anime{
+	from{
+	transform: translate(30px, 100px);
+	}
+	to{
+	transform: translate(-24px, 100px);		
+	}
+}
+.qrcode-top{
+	height: 153px;
+	width: 145px;
+	padding-top: 9px;
+	padding-left: 6px;
+	box-sizing: border-box;
+	background-color: #ffffff;
+	border-radius: 4px;
+	float: left;
+}
+.downloads{
+	float: right;
+	width: 194px;
+	height: 152px;
+}
+.ios{
+	width: 194px;
+	height: 64px;
+	background-color: #ffffff;
+	margin-bottom: 24px;	
+	border-radius: 4px;
+}
+.downloads div:hover{
+	cursor: pointer;
+	background-color: #e0f3ff;
+}
+.androids{
+	position: relative;
+	width: 194px;
+	height: 64px;
+	background-color: #ffffff;	
+	border-radius: 4px;
+}
+.androids+div {
+	display: none;
+	height: auto;
+	position: relative;
+}
+.androids.active {
+	border-radius: 4px 4px 0px 0px;
+}
+.androids.active+div {
+	display: block;
+}
+.androids.active+div>div {
+	border-radius: 0px;
+}
+.androids.active+div>div:last-child {
+	border-radius: 0px 0px 4px 4px;
+}
+.android{
+	width: 194px;
+	height: 64px;
+	background-color: #ffffff;	
+	border-radius: 4px;
+	position: absolute;
+}
+.android:nth-child(2) {
+	top: 64px;
+}
+.android:nth-child(3) {
+	top: 128px;
+}
+
+.icon{
+	float: left;
+	width: 50px;
+	height: 50px;
+}
+.icon img{
+	/*float: left;*/
+	/*display: block;*/
+	padding-top: 7px;
+	padding-left: 7px;
+}
+.downloads .title{
+	float: left;
+	width: 120px;
+	height: 64px;
+	text-align: center;
+	line-height: 64px;
+	color: #39442e;
+	font-size: 22px;
+}
+
+/*浏览内容头部*/
+.list-title{
+	width: 100%;
+	height: 100px;
+}
+.list-title>.container>div{
+	width: 100px;
+	height: 33px;
+	color: #333333;
+	font-size: 25px;
+	margin-top: 37px;
+}
+.list-title>.container>div:first-child{
+	float:left;
+}
+.list-title>.container>div:last-child{
+	float:right;
+	color: #cccccc;
+}
+
+/*文章推荐列表 部分*/
+.article-list{
+	/*height: auto;*/
+	height: 666px;
+}
+.article-list{
+	height: auto;
+}
+/*
+由于article-list板块内的内容设置成了“浮动”，已经脱离普通流，
+article-list的高度height为0px，除非设置固定的高度，否则，
+设置成auto是没有用的，很明显这里并不要固定的高度。
+ */
+.article-list:after{
+	content:'';
+	display: block;
+	clear: both;
+}
+.article-list>.container{
+	width: 990px;
+}
+.article-list>.container>div{
+	width: 300px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.article-list .list{
+	width: 260px;
+	padding: 20px;
+	margin-top: 20px;
+	background-color: #ffffff;
+	border-radius: 3px;
+}
+.article-list>.container>div{
+	float: left;
+	width: 300px;
+	height: auto;
+}
+.list>a{
+	display: block;
+	width: 260px;
+	color: #333333;
+}
+.list>a>div>img{
+	display: block;
+	width: 100%;
+	height: 260px;
+}
+.list>a>div:first-child{
+	margin-bottom: 14px;
+}
+.list>a>div:last-child{
+	width: 100%;
+	line-height: 30px;
+}
+
+/*read-more*/
+.read-more{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.read-more>.container{
+	height: 62px;
+	background-color: #e8eef2;
+	border-radius: 3px;
+}
+.read-more>.container>a{
+	display: block;
+	text-align:center;
+	line-height: 62px;
+	font-size: 20px;
+	color: #15527b;
+}
+
+/*footer部分*/
+.footer{
+	height: 265px;
+	background: #e5e5e5;
+	color: #666; 
+	font-size: 14px;
+}
+.footer>.container{
+	padding-top: 30px;
+}
+.footer>.container>.fc-left{
+	float: left;
+	width: 720px;
+	height: 100%;
+}
+.fc-left>.introduction>p{
+	margin-top: 12px;
+	height: 26px;
+}
+.fc-left>.introduction>p:first-child{
+	margin-top: 0px;
+}
+.fc-left>.introduction>p:nth-child(2){
+	margin-bottom: 2px;
+}
+.fc-left>.introduction>p:nth-child(3){
+	margin-top: 0px;
+}
+.footer>.container>.fc-right{
+	float: right;
+	width: 145px;
+	height: 182px;
+}
+.fc-right>.qr-frame{
+	width: 100%;
+	height: 153px;
+	background-color: #ffffff;
+	border-radius: 3px;
+}
+.fc-right>.qr-frame>img{
+	display: block;
+	padding-left: 5px;
+	padding-top: 9px;
+}
+.fc-right>div:last-child{
+	font-size: 16px;
+	padding-top: 13px;
+	height: 16px;
+	text-align: center;
+	line-height: 16px;
+}
